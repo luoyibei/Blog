@@ -82,7 +82,6 @@ body {
     color: #f1f1f2;
     position: relative;
     width: 50%;
-    height: 350px;
 }
 @media (max-width: 767px) {
     .right {
@@ -129,7 +128,6 @@ input::-moz-focus-inner {
 }
 #submit {
     color: #707075;
-    /*width: 50%;*/
     margin-top: 40px;
     transition: color 300ms;
 }
@@ -138,11 +136,4 @@ input::-moz-focus-inner {
 }
 #submit:active {
     color: #d0d0d2;
-}
-
-#button{
-    color: #707075;
-    /*width: 50%;*/
-    margin-top: 40px;
-    transition: color 300ms;
 }

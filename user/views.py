@@ -1,4 +1,4 @@
-from flask import Blueprint,session,render_template,abort
+from flask import Blueprint,session
 from flask import render_template,request,redirect
 from user.models import User
 from lib.orm import db
@@ -32,10 +32,9 @@ def index():
     name = session.get('name')
     user = User.query.filter_by(username = name).one()
     if user.username == session.get('name'):
-        return '123'
-        # return render_template('demo.html', user=user)
-    else:
-        abort(404)
+        # return '123'
+
+        return render_template('blog_home.html', user=user)
 
 
 @user_bp.route('/register',methods=('POST','GET'))
@@ -47,8 +46,11 @@ def register():
         user = User(username=name,password=password,city=city)
         db.session.add(user)
         db.session.commit()
-        #
-        # session['name'] = name
         return redirect('/user/')
     else:
         return render_template('register.html')
+
+
+@user_bp.route('/h')
+def h():
+    return render_template('login.html')

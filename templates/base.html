@@ -1,37 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>base</title>
-    <style>
-        body{
-            margin: 0 auto;
-            padding: 0;
-            width: 1000px
-        }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>CSS Heaven 2 - Free CSS Template</title>
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<!-- 头部 -->
-    <div style="height: 150px;background-color: burlywood">
-        <p><a href="{{ url_for('blog.index') }}">BLOG</a></p>
-    </div>
-<!-- 中间 -->
-    <div style="height: 600px">
-        <div style="width:600px ;height: 600px;background-color: pink;float: left">
-            {% block content %}
-                暂无内容
-            {% endblock %}
-        </div>
-        <div style="width:400px ;height: 600px;background-color:orange;float: left">
-            {% block content2 %}
-                暂无内容
-            {% endblock %}
-        </div>
-    </div>
 
-<!-- 底部 -->
-    <div style="height: 150px;background-color: grey"></div>
+<body>
+<div id="topbanner">
+    <div class="container">
+        <h1 id="sitename"><a href="#">Super Blog</a>
+
+        </h1>
+        <div id="mainnav">
+            <ul>
+                <li class="active"><a href="../blog/templates/blog_home.html">博客首页<span>欢迎</span></a></li>
+                <li><a href="about.html">个人中心<span>个人信息</span></a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="pagewrap">
+    <div id="wrap">
+        <div id="homeheader">
+            <div id="mainimg">
+
+                <img src="../static/img/mainheader.jpg" width="700" height="330" alt="main image"/></div>
+
+            <div class="clear"></div>
+        </div>
+        <div id="maincontent">
+            <div id="threecol">
+                <div class="col1">
+
+                    <h2>每日新闻 </h2>
+                    <p>由游戏科学GameScience 开发的西游题材单机·动作·角色扮演游戏《黑神话：悟空》今日正式公布长达13分钟的实机演示视频！
+                        本视频内容全部基于实际操作录制，将最真实的游戏体验一刀不剪地呈现给玩家</p>
+
+                </div>
+
+                <div class="col3">
+
+                    <h2>每日诗句</h2>
+                    <p style="text-align: center">
+                        西风吹老洞庭波，<br>
+                        一夜湘君白发多。<br>
+                        醉后不知天在水，<br>
+                        满船清梦压星河。</p>
+
+                </div>
+
+
+                <div class="clear"></div>
+            </div>
+            <div class="clear bordered"></div>
+            <div >
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
