@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="/blog/post" method="POST">
+        标题:<input type="text" name="blogname">
+        <br>
+        <br>
+        内容:<textarea name="blogcontent"></textarea>
+        <br>
+        <input type="submit" value="上传">
+    </form>
+
+{% endblock %}

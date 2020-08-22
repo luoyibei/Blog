@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ blog.blogname }}</h1>
+    <h2>{{ name }}</h2>
+    <p>{{ blog.blogcontent }}</p>
+    <a href="/blog/delete?id={{ blog.id }}">删除</a>
+{% endblock %}
