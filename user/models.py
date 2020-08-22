@@ -1,11 +1,6 @@
 from lib.orm import db
 
 
-# User = {
-#     'Tom' : {'name':'Tom','password':'123'},
-#     'Jerry' : {'name':'Jerry','password':'223'}
-# }
-
 class User(db.Model):
     __tablename__ = 'user'
 

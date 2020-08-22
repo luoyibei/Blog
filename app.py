@@ -10,6 +10,7 @@ from blog.views import blog_bp
 from lib.orm import db
 from user.views import user_bp
 from user.models import User
+from blog.models import Blog
 
 
 app = Flask(__name__)
@@ -34,6 +35,16 @@ def add_data():
     db.session.add_all([u1,u2,u3,u4])
     db.session.commit()
 
+
+@manager.command
+def add_blog():
+    '''添加初始数据'''
+    b1 = Blog(blogname = 'Firstblog',blogcontent = '亲亲' )
+    b2 = Blog(blogname = 'Secondtblog',blogcontent = '抱抱')
+    b3 = Blog(blogname = 'Thirdblog',blogcontent = '举高高')
+
+    db.session.add_all([b1,b2,b3])
+    db.session.commit()
 
 app.register_blueprint(user_bp)
 app.register_blueprint(blog_bp)

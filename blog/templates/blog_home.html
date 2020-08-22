@@ -1,4 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-    123
+    <table>
+        {% for blog in blogs  %}
+            <tr>
+                <td style="font-size: 30px">{{ blog.blogname }}</td>
+
+            </tr>
+            <tr style="font-size: 20px">
+                <td>{{ username }}</td>
+                <td><input style="font-size: 15px" type="button" value="删除"></td>
+            </tr>
+            <tr>
+                <td style="font-size: 20px">{{ blog.blogcontent }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
